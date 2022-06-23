@@ -1,0 +1,151 @@
+% Plantilla para los PICs 
+% Version 0.1
+% 02/06/2022
+% Por: pfordonez@unl.edu.ec 
+
+
+% Elige si deseas optimizar la ejecución del proyecto almacenando las figuras generadas con TikZ y PGF en una carpeta (archivos/figuras-procesadas).
+% 1 - Si, 2 - No
+\def\OptimizaTikZ{2}
+\input{Config/config_book.tex}
+\usepackage{soul}
+\usepackage{pdfpages}
+\usepackage[subpreambles=false]{standalone}
+\usepackage{import}
+\usepackage{pgfgantt}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+
+%Codigo asignado del proyecto
+\newcommand{\codPTT}{}
+%Título y subtítulo
+\newcommand{\titulo}{Plantilla para los proyectos de investigación de integración curricular}
+
+\newcommand{\tituloEng}{Guidelines for degree project work}
+
+
+\newcommand{\subtitulo}{Linea de investigación: Software/SI/CA}
+% Datos del autor
+\newcommand{\miNombre}{Nombre del autor}
+\newcommand{\miEmail}{autor@unl.edu.ec}
+% Datos del tutor/es
+\newcommand{\miTutor}{Pablo F. Ordoñez-Ordoñez, Mg.Sc.}
+\newcommand{\miTutorB}{Tutor 2}
+
+% Información añadida a las propiedades del archivo PDF.
+\hypersetup{
+pdfauthor = {\miNombre~(\miEmail)},
+pdftitle = {\titulo},
+}
+
+%%
+% Archivo de acrónimos
+%%
+\makeglossaries % Genera la base de datos de acrónimos
+\input{Anexos/acronimos.tex} % Archivo que contiene los acrónimos
+\input{Secciones/Anexos}
+\begin{document}
+
+%portada 
+\import{Portada/}{portadaUNL}
+% Números romanos hasta el mainmatter.
+\frontmatter
+\noindent {\fontsize{16pt}{16pt} \selectfont \textbf{Certificación de Tutoría}}\\
+
+En calidad de Tutor y Cotutor del Proyecto de Trabajo de Titulación PTT, certificamos la tutela a \miNombre, con el tema \textbf{\titulo} - \textbf{\tituloEng}, quien ha cumplido con todas las observaciones requeridas. Es todo cuanto puedo decir en honor a la verdad, facultando al interesado hacer uso de la presente, así como el trámite de pertinencia del presente proyecto.\\
+\linebreak 
+\linebreak 
+\linebreak
+\rightline{Loja, \today}
+\linebreak
+\linebreak
+\linebreak
+\linebreak
+\linebreak
+\linebreak
+\linebreak
+\begin{center}
+Atentamente,\\
+\miTutor\\
+\textbf{TUTOR}
+\linebreak 
+\linebreak 
+\linebreak 
+\linebreak 
+\linebreak 
+\miTutorB\\
+\textbf{COTUTOR}
+\end{center}
+
+
+\newpage
+\noindent {\fontsize{16pt}{16pt} \selectfont \textbf{Certificación de Autoría del Proyecto}}\\
+
+Yo \miNombre, estudiante de la Universidad Nacional de Loja, declaro en forma libre y voluntaria que el presente Proyecto de Trabajo de Titulación que versa sobre \textbf{\titulo}- \textbf{\tituloEng}, así como la expresiones vertidas en la misma son autoría del compareciente, quien ha realizado en base a recopilación bibliográfica primaria y secundaria. En consecuencia asumo la responsabilidad de la originalidad de la misma y el cuidado al remitirse a las fuentes bibliográficas respectivas para fundamentar el contenido expuesto.\\
+\linebreak 
+\linebreak 
+\linebreak 
+\linebreak 
+\linebreak 
+\linebreak 
+Atentamente,\\
+\miNombre
+
+\newpage
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+\listoftables
+
+\newpage
+\vspace*{6cm}
+\begin{center}
+\addtolength{\baselineskip}{\baselineskip}
+\begin{Huge}
+\textbf {\titulo}
+\linebreak 
+\linebreak 
+\textbf{\tituloEng}
+\linebreak 
+\linebreak 
+\linebreak 
+\subtitulo
+\end{Huge}
+\end{center}
+
+% Inicia la numeración habitual.
+\mainmatter
+
+\input{Secciones/1_Problematica.tex}
+\input{Secciones/2_Justificacion.tex}
+\input{Secciones/3_Objetivos.tex}
+\input{Secciones/4_Alcance.tex}
+\input{Secciones/5_MarcoTeorico.tex}
+\input{Secciones/6_Metodologia.tex}
+\chapter{Cronograma}
+\label{Cronograma}
+Para mas información revisar \cite{gantt}
+\import{Secciones/}{7_Cronograma}
+\input{Secciones/8_Presupuesto.tex}
+ 
+\bibliographystyle{ieeetr}%Used BibTeX style
+\bibliography{Config/bib}
+
+%%%%
+% CONTENIDO. LISTA DE ACRÓNIMOS. Comenta las líneas si no lo deseas incluir.
+%%%%
+% Incluye el listado de acrónimos utilizados en el trabajo. 
+\printglossary[style=modsuper,type=\acronymtype,title={Lista de Acrónimos y Abreviaturas}]
+% Añade el resto de acrónimos si así se desea. Si no elimina el comando siguiente
+\glsaddallunused 
+
+%%%%
+% CONTENIDO. Anexos - Añade o elimina según tus necesidades
+%%%%
+\appendix % Inicio de los apéndices
+\input{Anexos/anexo_2}
+\input{Anexos/anexo_3}
+\input{Anexos/anexo_I}
+\end{document}

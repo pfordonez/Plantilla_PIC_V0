@@ -1,8 +1,3 @@
-% Plantilla para los PICs 
-% Version 0.1
-% 02/06/2022
-% Por: pfordonez@unl.edu.ec 
-
 
 % Elige si deseas optimizar la ejecución del proyecto almacenando las figuras generadas con TikZ y PGF en una carpeta (archivos/figuras-procesadas).
 % 1 - Si, 2 - No
@@ -25,7 +20,6 @@
 \newcommand{\tituloEng}{Guidelines for degree project work}
 
 
-\newcommand{\subtitulo}{Itinerario: Ingeniería de Software/IA/CA}
 % Datos del autor
 \newcommand{\miNombre}{Nombre del autor}
 \newcommand{\miEmail}{autor@unl.edu.ec}
@@ -51,35 +45,9 @@ pdftitle = {\titulo},
 \import{Portada/}{portadaUNL}
 % Números romanos hasta el mainmatter.
 \frontmatter
-\noindent {\fontsize{16pt}{16pt} \selectfont \textbf{Certificación de Tutoría}}\\
-
-En calidad de Tutor y Cotutor del Proyecto de Trabajo de Titulación PTT, certificamos la tutela a \miNombre, con el tema \textbf{\titulo} - \textbf{\tituloEng}, quien ha cumplido con todas las observaciones requeridas. Es todo cuanto puedo decir en honor a la verdad, facultando al interesado hacer uso de la presente, así como el trámite de pertinencia del presente proyecto.\\
-\linebreak 
-\linebreak 
-\linebreak
-\rightline{Loja, \today}
-\linebreak
-\linebreak
-\linebreak
-\linebreak
-\linebreak
-\linebreak
-\linebreak
-\begin{center}
-Atentamente,\\
-\miTutor\\
-\textbf{TUTOR}
-\linebreak 
-\linebreak 
-\linebreak 
-\linebreak 
-\linebreak 
-\miTutorB\\
-\textbf{COTUTOR}
-\end{center}
+\noindent {\fontsize{16pt}{16pt} \selectfont 
 
 
-\newpage
 \noindent {\fontsize{16pt}{16pt} \selectfont \textbf{Certificación de Autoría del Proyecto}}\\
 
 Yo \miNombre, estudiante de la Universidad Nacional de Loja, declaro en forma libre y voluntaria que el presente Proyecto de Trabajo de Titulación que versa sobre \textbf{\titulo}- \textbf{\tituloEng}, así como la expresiones vertidas en la misma son autoría del compareciente, quien ha realizado en base a recopilación bibliográfica primaria y secundaria. En consecuencia asumo la responsabilidad de la originalidad de la misma y el cuidado al remitirse a las fuentes bibliográficas respectivas para fundamentar el contenido expuesto.\\
@@ -119,16 +87,16 @@ Atentamente,\\
 \mainmatter
 
 \input{Secciones/1_Problematica.tex}
-\input{Secciones/2_Justificacion.tex}
-\input{Secciones/3_Objetivos.tex}
+%\input{Secciones/2_Justificacion.tex}
+%\input{Secciones/3_Objetivos.tex}
 %\input{Secciones/4_Alcance.tex}
-\input{Secciones/5_MarcoTeorico.tex}
-\input{Secciones/6_Metodologia.tex}
-\chapter{Cronograma}
-\label{Cronograma}
-Para mas información revisar \cite{gantt}
-\import{Secciones/}{7_Cronograma}
-\input{Secciones/8_Presupuesto.tex}
+%\input{Secciones/5_MarcoTeorico.tex}
+%\input{Secciones/6_Metodologia.tex}
+%\chapter{Cronograma}
+%\label{Cronograma}
+%Para mas información revisar \cite{gantt}
+%\import{Secciones/}{7_Cronograma}
+%\input{Secciones/8_Presupuesto.tex}
  
 \bibliographystyle{ieeetr}%Used BibTeX style
 \bibliography{Config/bib}
@@ -144,8 +112,8 @@ Para mas información revisar \cite{gantt}
 %%%%
 % CONTENIDO. Anexos - Añade o elimina según tus necesidades
 %%%%
-\appendix % Inicio de los apéndices
-\input{Anexos/anexo_2}
-\input{Anexos/anexo_3}
-\input{Anexos/anexo_I}
+%\appendix % Inicio de los apéndices
+%\input{Anexos/anexo_2}
+%\input{Anexos/anexo_3}
+%\input{Anexos/anexo_I}
 \end{document}
